@@ -1,0 +1,36 @@
+# Compiled binaries and executables
+*.exe
+*.out
+*.o
+*.class
+
+# Python specific
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# C++ specific
+*.obj
+*.lib
+*.dll
+*.exp
+*.pdb
+
+# Java specific
+*.jar
+*.war
+*.ear
+
+# IDE specific files (e.g., VS Code, IntelliJ, Eclipse)
+.vscode/
+.idea/
+*.iml
+*.project
+*.classpath
+
+# Log files
+*.log
+
+# Temporary files
+*~
+*.tmp

@@ -1,0 +1,5 @@
+
+    cin >> n;
+    pattern(n);
+    
+}
