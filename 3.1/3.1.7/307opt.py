@@ -5,7 +5,6 @@ def moveZeroesOptimal(arr):
     j = -1
     for i in range(n):
         if arr[i] == 0:
-            # FIX: Use assignment (=) instead of comparison (==)
             j = i
             break
 
