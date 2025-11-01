@@ -28,6 +28,25 @@ def better(nums):
         Longest = max(Longest,cnt)
     return Longest
 
+def optimal(nums):
+    n = len(nums)
+    longest = 1
+    st = set()
+    for i in range(n):
+        st.add(nums[i])
+    for i in st:
+        if i-1 not in st:
+            cnt = 1
+            x= i
+            while x+1 in st:
+                x = x+1
+                cnt = cnt +1
+            longest = max(cnt,longest)
+    return longest
+    
+
+
 arr=[3, 8, 5, 7, 6]
 print(f"Brute force: {Longest_consecutive_sequence_bf(arr)}")
 print(f"better: {better(arr)}")
+print(f"optimal:{optimal(arr)}")
