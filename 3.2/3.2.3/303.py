@@ -1,4 +1,10 @@
 # Moore's voting Algorithm
+from collections import Counter
+def better(arr):
+    counts = Counter(arr) # Returns a Tuple
+    for num, count in counts.items():
+        if count > len(arr)/2:
+            return num
 def majorityelementrepeating(arr):
     n=len(arr)
     count=0
@@ -18,4 +24,6 @@ def majorityelementrepeating(arr):
             return element
     return -1
 arr=[7,7,5,7,5,1,5,7,5,5,7,7,5,5,5,5]
+arr2=[7,7,5,7,5,1,5,7,5,5,7,7,5,5,5,5]
 print(f"majority element repeating greater than n/2 times is: {majorityelementrepeating(arr)}")
+print(f"better but not optimal: {better(arr2)}")
