@@ -9,7 +9,7 @@ def twosum_bruteforce(arr,target):
 
 def twosum_Hashmap(arr,target):
     n=len(arr)
-    hashmap={0:-1}
+    hashmap={}
     for i in range(n):
         req=target-arr[i]
         if req in hashmap:
@@ -19,25 +19,24 @@ def twosum_Hashmap(arr,target):
     return {-1,-1}
 
 def twosum_optimal(arr, target):
-    # This version correctly implements the two-pointer logic 
-    # but still returns indices of the *sorted* array.
     n = len(arr)
-    sort = sorted(arr) # O(N log N)
+    nums = [(nums,i)for i,nums in enumerate(arr)]
+    nums.sort() # O(N log N)
     l = 0
     r = n - 1
     
     while l < r:
-        current_sum = sort[l] + sort[r]
+        current_sum = nums[l][0] + nums[r][0]
         
         if current_sum < target:
-            l += 1 # Move left pointer right to increase sum
+            l += 1 
         elif current_sum > target:
-            r -= 1 # Move right pointer left to decrease sum
-        else: # current_sum == target
-            # Found the pair in the sorted array
-            return l, r # Still returns indices in the *sorted* array
+            r -= 1 
+        else: 
+    
+            return nums[l][1], nums[r][1] 
             
-    return -1, -1 # Correctly returns a tuple for "not found"
+    return -1, -1 
 
 
 arr=[2,6,5,8,11]
