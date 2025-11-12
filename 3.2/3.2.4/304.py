@@ -40,6 +40,20 @@ def kadane_algorithm_standard(arr):
 
     return max_so_far
 
+# Im not so sure if this is kadane's algortihm
+
+def proper_kadane(arr):
+    maxi = -2000
+    sum = 0
+    n = len(arr)
+    for i in range(n):
+        sum += arr[i]
+        maxi = max(sum,maxi)
+        if sum < 0:
+            sum = 0
+    return maxi
+
+
 
     
 
@@ -51,4 +65,4 @@ def kadane_algorithm_standard(arr):
 arr=[-2,-3,4,-1,-2,1,5,-3]
 print(f"brute force approach : {bruteforce(arr)} where time complexity is : O(n^3) and space complexity is O(1)")
 print(f"better approach : {better(arr)} where time complexity is : O(n^2) and space complexity is O(1)")
-print(f"Kadane's algorith approach : {kadane_algorithm_standard(arr)} where time complexity is : O(n) and space complexity is O(1)")
+print(f"Kadane's algorith approach : {proper_kadane(arr)} where time complexity is : O(n) and space complexity is O(1)")
